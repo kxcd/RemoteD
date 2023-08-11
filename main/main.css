@@ -1,0 +1,60 @@
+div.heading{
+	display: flex;
+	justify-content: space-between;
+}
+
+a.logout{
+	color: white;
+	text-decoration: none;
+	position:absolute;
+	top: 0.8em;
+	right: 0.8em;
+}
+
+a.logout:hover{color:red;font-size: larger;}
+
+pre,td{color: whitesmoke;}
+
+form#getnewaddress button{white-space: nowrap;}
+
+p.messages{height:5em;}
+
+
+div.camera{cursor: pointer;padding-bottom: 10px;}
+div.camera:hover{font-size:x-large;padding: 0;margin: 0%;border: 0;}
+
+
+table{text-align: left;}
+
+td a{font-family: 'Courier New',monospace,ui-monospace,system-ui;}
+
+/* This matches the coinjoin status cell. */
+table.coinjoin_status tr:first-child td:nth-child(2){cursor: pointer;}
+
+table.coinjoin_status tr:first-child td:nth-child(2):hover{position: absolute;font-size:x-large;}
+
+/* Format the Dash amount. */
+tbody tr td:nth-child(5){text-align: right;}
+td.negative{color:#ffcccc}
+td.positive{color: #ccffcc;}
+
+
+tbody tr:hover {background-color: #444;}
+
+div.power{
+	display: flex;
+	justify-content: center;
+}
+
+div.power img{
+	cursor: pointer;
+	background: linear-gradient(1deg, red,green);
+	background-size: 500% 500%;
+	animation: power_cycle 3s ease infinite;
+}
+
+@keyframes power_cycle {
+	0%{background-position:95% 0%}
+	50%{background-position:30% 100%}
+	100%{background-position:85% 0%}
+}

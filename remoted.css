@@ -1,0 +1,18 @@
+body{
+    color:#2f38e6;
+    background-color:#121213;
+    margin:1rem;
+}
+
+p{color: whitesmoke;}
+
+/*label.password{display: block;margin: 0.2em;}*/
+input.password{background-color: #999;}
+form,input,button{margin: 0.5em 0;}
+form{width: 0;}
+
+a:link{color: #00dF00; text-decoration: underline;}
+a:active{color: #00009f; text-decoration: underline;}
+a:visited{color: #ff5555; text-decoration: underline;}
+a:hover{color: #FFFFFF; text-decoration: none;}
+

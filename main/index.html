@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A remote control Dash wallet for people on the go.">
+	<script src="main.js"></script>
+	<link rel="stylesheet" href="../remoted.css">
+	<link rel="stylesheet" href="main.css">
+	<link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+	<title>RemoteD</title>
+</head>
+<body>
+	<div class="heading">
+		<h1>Remote
+		<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 550 550" height="25" width="25"><script xmlns=""/><defs xmlns="http://www.w3.org/2000/svg">
+			<linearGradient id="grad1" x1="0%" y1="0%" x2="15%" y2="100%">
+				<stop style="stop-color:rgb(193, 234, 252);stop-opacity:1" offset="0%"/>
+				<stop xmlns="http://www.w3.org/2000/svg" style="stop-color:rgb(0,141,228);stop-opacity:1" offset="50%"/>
+				<stop style="stop-color:rgb(1, 32, 96);stop-opacity:1" offset="95%"/>
+			</linearGradient>
+			<style>.cls-1{fill:url(#grad1);}.cls-2{fill:#fff;}</style></defs><rect xmlns="http://www.w3.org/2000/svg" class="cls-1" width="550" height="550" rx="150"/><g transform="translate(96.25, 96.25) scale(0.65)" xmlns="http://www.w3.org/2000/svg">
+			<path class="cls-2" d="M345.7,89.75H179.48l-13.78,77,150,.18c73.91,0,95.7,26.86,95.08,71.33-.36,22.77-10.23,61.37-14.5,73.91-11.38,33.35-34.77,71.32-122.47,71.24L128,383.34,114.2,460.45H280.07c58.52,0,83.33-6.85,109.75-18.95,58.43-27.12,93.2-84.76,107.17-160C517.8,169.44,492,89.75,345.7,89.75"/><path xmlns="http://www.w3.org/2000/svg" class="cls-2" d="M107.8,236.41C64.22,236.41,58,264.78,53.9,282c-5.42,22.41-7.2,31.57-7.2,31.57H216.92c43.58,0,49.81-28.37,53.9-45.53,5.42-22.42,7.2-31.58,7.2-31.58Z"/></g></svg>
+		</h1>
+		<h1 class="logout"><a class="logout" title="Logout" href="../logout/">&#9760;<!--&#128128;--></a></h1>
+	</div>
+	<p id="login_messages">
+		Hello, <span>???</span>!
+	</p>
+	<p class="height">
+		Block: <a href="https://chainz.cryptoid.info/dash/">???</a>.
+	</p>
+	<p class="balance">
+		Total balance: <span>???</span> Dash.<br>
+		CoinJoin (mixed) balance: <span class="cj">???</span> Dash.
+	</p>
+
+	<form id="send" method="post">
+		<fieldset>
+			<legend>Send</legend>
+			<input type="text" minlength="33" maxlength="36" name="address" id="address" placeholder="Address" autocomplete="off" required><br>
+			<input type="number" step="0.00000001" min="0.00001" max="100" name="amount" id="amount" placeholder="Amount" autocomplete="off" required><br>
+			<div class="heading">
+				<div><input type="checkbox" name="privatesend" id="privatesend"><label for="privatesend">PrivateSend</label></div><div title="Coming soon QR code scanner" class="camera">&#128247;</div>
+			</div>
+			<div class="heading">
+				<button type="submit" value="send">Send</button><input type="reset" value="Clear">
+			</div>
+		</fieldset>
+	</form>
+	<h4>Recent transactions</h4>
+	<p class="messages"></p>
+	<hr>
+	<h4>CoinJoin status</h4>
+	<table class="coinjoin_status">
+		<tr><td>Running:</td><td>???</td></tr>
+	</table>
+	<hr>
+	<pre></pre>
+	<form id="getnewaddress" method="post"><button type="submit" value="getnewaddress">Get new address</button></form>
+	<hr>
+	<h4>Transactions</h4>
+	<table class="transactions">
+		<thead>
+			<tr>
+				<th></th><th>Date</th><th>Type</th><th>Address</th><th>Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		</tbody>
+	</table>
+	<hr>
+	<div class="power"><img title="Restart the dashd" src="../images/Inverted_power.png" width="49" height="50" alt="Power"></div>
+</body>
+</html>
