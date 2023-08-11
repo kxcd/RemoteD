@@ -55,3 +55,26 @@ Change the placeholder `your-domain.com` for your actual domain from the Dynamic
 15. Test the RemoteD site, it should now load.
 
 
+### Harden the security of the RemoteD
+
+To improve the security of the RemoteD, do the following.
+
+1. Run `sudo lighttpd-enable-mod setenv` to allow re-writing of http headers.
+2. Edit the file `/etc/lighttpd/conf-available/05-setenv.conf` and add the below lines right after the line `server.modules                += ( "mod_setenv" )`.
+
+```
+setenv.set-response-header += (
+"Strict-Transport-Security" => "max-age=31536000; includeSubDomains",
+"content-security-policy" => "default-src https:",
+"x-frame-options" => "SAMEORIGIN",
+"x-content-type-options" => "nosniff",
+"x-xss-protection" => "0",
+"Permissions-Policy" => "interest-cohort=()",
+"Referrer-Policy" => "same-origin"
+)
+```
+
+3. Restart the lighttpd with `sudo systemctl restart lighttpd.service` and verify you get a good score at https://securityheaders.com/
+4. You can also test your SSL/TLS security at https://www.ssllabs.com/ssltest/
+5. You can also probe you open ports https://www.grc.com/  and make sure only the https (443) is open, if port 80 is still open, you should now close it via your router and remove the port forwarding rule for port 80 (http).
+
