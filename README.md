@@ -65,7 +65,7 @@ To improve the security of the RemoteD, do the following.
 ```
 setenv.set-response-header += (
 "Strict-Transport-Security" => "max-age=31536000; includeSubDomains",
-"content-security-policy" => "default-src https:",
+"content-security-policy" => "default-src 'self' https:; style-src 'unsafe-inline' 'self'",
 "x-frame-options" => "SAMEORIGIN",
 "x-content-type-options" => "nosniff",
 "x-xss-protection" => "0",
